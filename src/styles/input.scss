@@ -1,21 +1,23 @@
-.input{
+.input {
     background-color: var(--grey-2);
     border-radius: 4px;
     width: 100%;
-    height: 38px;
+    height: 44px; 
     padding: 0 16px;
     color: var(--grey-1);
-
-    &::placeholder{
-        color: var(--grey-1);
+    border: 1px solid transparent; 
+    font-size: 1rem;
+    
+    &::placeholder {
+      color: var(--grey-1);
     }
-
-    &:focus{
-        border: 1.218px solid var(--grey-0);
+  
+    &:focus {
+      border-color: var(--grey-0); 
+      color: var(--grey-0);
+  
+      &::placeholder {
         color: var(--grey-0);
-
-        &::placeholder{
-            color: var(--grey-0);
-        }
+      }
     }
-}
+  }

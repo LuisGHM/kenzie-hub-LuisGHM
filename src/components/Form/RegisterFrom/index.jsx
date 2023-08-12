@@ -32,7 +32,7 @@ export const RegisterForm = () => {
         toast.error("O email já existe");
       }
     } finally{
-      setLoading(false)
+      setLoading(false);
     }
   }
 

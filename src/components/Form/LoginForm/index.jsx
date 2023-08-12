@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Certifique-se de importar React
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../input";
 import styles from "./style.module.scss";
@@ -25,7 +25,6 @@ export const LoginForm = ({setUser}) => {
             localStorage.setItem("@TOKEN", data.token);
             navigate("/dashboard");
         } catch (error) {
-            console.log(error.response?.data);
             if (error.response?.data.message === "Incorrect email / password combination" ) {
                 toast.error("Senha ou email errado");
             }

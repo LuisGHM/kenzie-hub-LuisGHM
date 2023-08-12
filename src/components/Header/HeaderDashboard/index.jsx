@@ -17,8 +17,8 @@ export const HeaderDashboard = ({ logout }) => {
             className={`${styles.buttonReturn} btn grey headline bold`}
             to={"/"}
             onClick={() => {
-              logout(); // Chama a função de logout
-              toast.success("Usuário desconectado com sucesso."); // Exibe a notificação de sucesso
+              logout();
+              toast.success("Usuário desconectado com sucesso.");
             }}
           >
             Sair
