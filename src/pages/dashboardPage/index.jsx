@@ -2,12 +2,12 @@ import { HeaderDashboard } from "../../components/Header/HeaderDashboard";
 import { PerfilSection } from "../../components/PerfilSection";
 import { PostSection } from "../../components/PostSection";
 
-export const DashboardPage = ({user, logout}) =>{
+export const DashboardPage = () =>{
     return(
         <>
-            <HeaderDashboard logout={logout}/>
+            <HeaderDashboard/>
             <main>
-                <PerfilSection user={user}/>
+                <PerfilSection/>
                 <PostSection/>
             </main>
         </>

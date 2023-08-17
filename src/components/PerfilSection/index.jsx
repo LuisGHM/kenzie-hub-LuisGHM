@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import styles from "./style.module.scss";
+import { UserContext } from "../../providers/UserContext";
 
-export const PerfilSection = ({user}) =>{
+export const PerfilSection = () =>{
+    const { user } = useContext(UserContext);
+
     return(
         <section className={styles.perfilSection}>
             <div className="container">

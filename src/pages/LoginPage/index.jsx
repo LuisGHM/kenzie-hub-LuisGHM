@@ -1,13 +1,16 @@
 import { LoginForm } from "../../components/Form/LoginForm";
 import { HeaderLogin } from "../../components/Header/HeaderLogin";
 
-export const LoginPage = ({setUser}) =>{
-    return(
+
+export const LoginPage = () => {
+  return (
+    <>
+      <HeaderLogin />
+      <main>
         <>
-            <HeaderLogin/>
-            <main>
-                <LoginForm setUser={setUser}/>
-            </main>
+            <LoginForm />
         </>
-    )
-}
+      </main>
+    </>
+  );
+};

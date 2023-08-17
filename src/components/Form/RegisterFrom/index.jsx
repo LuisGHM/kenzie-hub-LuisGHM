@@ -3,10 +3,8 @@ import { Input } from "../input";
 import styles from "./style.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerFormSchema";
-import { api } from "../../../services/api";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { useContext} from "react";
+import { UserContext } from "../../../providers/UserContext";
 
 
 export const RegisterForm = () => {
@@ -18,23 +16,7 @@ export const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
   });
 
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const userRegister = async (formData) =>{
-    try {
-      setLoading(true)
-      await api.post("/users", formData);
-      navigate("/");
-      toast.success("Usuario cadastrado com sucesso");
-    } catch (error) {
-      if(error.response.data.message === "Email already exists" ){
-        toast.error("O email já existe");
-      }
-    } finally{
-      setLoading(false);
-    }
-  }
+  const { userRegister, loading } = useContext(UserContext);
 
   const submit = (formData) => {
     userRegister(formData);

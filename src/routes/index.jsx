@@ -1,25 +1,17 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { LoginPage } from "../pages/LoginPage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { DashboardPage } from "../pages/dashboardPage";
-import { useState } from "react";
+import { ProtectedRoutes } from "../components/ProtectRoutes";
 
 export const RoutesMain = () => {
-
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
-
-  const logout = () =>{
-    setUser(null);
-    navigate("/");
-    localStorage.removeItem("@TOKEN");
-  }
-
   return (
     <Routes>
-      <Route path="/" element={<LoginPage setUser={setUser} />} />
+      <Route path="/" element={<LoginPage/>} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/dashboard" element={<DashboardPage user={user} logout={logout}/>} />
+      <Route path="/dashboard" element={<ProtectedRoutes/>}>
+        <Route index element={<DashboardPage/>} />
+      </Route>
     </Routes>
   );
 };
