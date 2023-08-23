@@ -1,0 +1,19 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 14px 17px;
+    background-color: var(--grey-4);
+}
+
+.infoContainerCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.btnContainer{
+    display: flex;
+    gap:8px;
+}

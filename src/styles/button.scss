@@ -25,4 +25,20 @@
             background-color: var(--grey-2);
         }
     }
+
+    &.grey2{
+        background-color: var(--grey-3);
+
+        &:hover{
+            background-color: var(--grey-2);
+        }
+    }
+
+    &.grey3{
+        background-color: var(--grey-4);
+
+        &:hover{
+            background-color: var(--grey-3);
+        }
+    }
 }

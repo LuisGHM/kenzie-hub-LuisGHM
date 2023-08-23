@@ -1,0 +1,19 @@
+.headerPostSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 19px;
+}
+
+.buttonPlus{
+    max-width: 32px;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listContainer{
+    background-color: var(--grey-3);
+    padding: 16px 9px;
+}

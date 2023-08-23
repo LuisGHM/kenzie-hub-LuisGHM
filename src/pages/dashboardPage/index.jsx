@@ -1,6 +1,7 @@
 import { HeaderDashboard } from "../../components/Header/HeaderDashboard";
 import { PerfilSection } from "../../components/PerfilSection";
-import { PostSection } from "../../components/PostSection";
+import { PostList } from "../../components/PostList";
+import { PostProvider } from "../../providers/PostContext";
 
 export const DashboardPage = () =>{
     return(
@@ -8,7 +9,9 @@ export const DashboardPage = () =>{
             <HeaderDashboard/>
             <main>
                 <PerfilSection/>
-                <PostSection/>
+                <PostProvider>
+                    <PostList/>
+                </PostProvider>
             </main>
         </>
     )
