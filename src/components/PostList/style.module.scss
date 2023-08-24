@@ -16,4 +16,7 @@
 .listContainer{
     background-color: var(--grey-3);
     padding: 16px 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
