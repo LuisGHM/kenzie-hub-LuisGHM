@@ -1,7 +1,14 @@
-.inputContainer {
+.inputContainerCenter {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
-  }
+}
+
+.inputContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

@@ -26,6 +26,15 @@
         }
     }
 
+    &.grey1{
+        background-color: var(--grey-2);
+        color: var(--grey-1);
+
+        &:hover{
+            color: var(--grey-0);
+        }
+    }
+
     &.grey2{
         background-color: var(--grey-3);
 
