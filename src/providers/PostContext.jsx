@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useState } from "react";
 import { api } from "../services/api";
+import { toast } from "react-hot-toast";
 
 export const PostContext = createContext({});
 
@@ -62,7 +63,7 @@ export const PostProvider = ({ children }) => {
         },
         onSuccess:() =>{
             revalidate();
-            alert("Post deletado")
+            toast.success("Post deletado")
         }
    });
 

@@ -5,7 +5,7 @@ import { BsFillTrash3Fill } from "react-icons/bs"
 import { PostContext } from "../../../providers/PostContext";
 
 export const PostCard = ({ post }) => {
-  const { setEditingPost, setDeletingPost, postDelete } = useContext(PostContext);
+  const { setEditingPost, postDelete } = useContext(PostContext);
 
   return (
     <li className={`${styles.cardContainer}`}>

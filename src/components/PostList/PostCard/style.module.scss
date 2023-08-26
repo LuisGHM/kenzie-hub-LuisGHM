@@ -17,3 +17,15 @@
     display: flex;
     gap:8px;
 }
+
+@media (min-width: 600px) {
+    .cardContainer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btnContainer{
+        align-items: center;
+    }
+}
