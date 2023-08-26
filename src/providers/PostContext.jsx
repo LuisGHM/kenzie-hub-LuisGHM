@@ -10,9 +10,6 @@ export const PostProvider = ({ children }) => {
     const [editingPost, setEditingPost] = useState(null);
     const token = localStorage.getItem("@TOKEN");
 
-    console.log(editingPost);
-
-
     const { data: postList} = useQuery({ queryKey: ["posts"], queryFn: async () =>{
         const { data } = await api.get("/profile", {
             headers: {
@@ -40,9 +37,23 @@ export const PostProvider = ({ children }) => {
     onSuccess: revalidate,
    });
 
+   const postUpdate = useMutation({
+        mutationFn: async (formData) => {
+             return await api.put(`/users/techs/${editingPost.id}`, formData, {
+                headers:{
+                    Authorization: `Bearer ${token}`,
+                },
+            }); 
+        },
+        onSuccess:() =>{
+            setEditingPost(null);
+            revalidate();
+        }
+   });
+
 
     return(
-        <PostContext.Provider value={{postList, isOpenAdd, setisOpenAdd, editingPost, setEditingPost, postCreate}}>
+        <PostContext.Provider value={{postList, isOpenAdd, setisOpenAdd, editingPost, setEditingPost, postCreate, postUpdate}}>
             {children}
         </PostContext.Provider>
     )
