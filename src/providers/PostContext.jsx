@@ -51,9 +51,24 @@ export const PostProvider = ({ children }) => {
         }
    });
 
+   const postDelete = useMutation({
+        mutationFn: async (formData) => {
+            console.log(formData.id);
+              return await api.delete(`/users/techs/${formData.id}`, {
+                headers:{
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+        },
+        onSuccess:() =>{
+            revalidate();
+            alert("Post deletado")
+        }
+   });
+
 
     return(
-        <PostContext.Provider value={{postList, isOpenAdd, setisOpenAdd, editingPost, setEditingPost, postCreate, postUpdate}}>
+        <PostContext.Provider value={{postList, isOpenAdd, setisOpenAdd, editingPost, setEditingPost, postCreate, postUpdate, postDelete}}>
             {children}
         </PostContext.Provider>
     )

@@ -5,7 +5,7 @@ import { BsFillTrash3Fill } from "react-icons/bs"
 import { PostContext } from "../../../providers/PostContext";
 
 export const PostCard = ({ post }) => {
-  const { setEditingPost } = useContext(PostContext);
+  const { setEditingPost, setDeletingPost, postDelete } = useContext(PostContext);
 
   return (
     <li className={`${styles.cardContainer}`}>
@@ -14,7 +14,7 @@ export const PostCard = ({ post }) => {
         <span className="headline grey1">{post.status}</span>
         <div className={styles.btnContainer}>
             <button className="btn grey3" onClick={() => setEditingPost(post)}><BiPencil/></button>
-            <button className="btn grey3"><BsFillTrash3Fill/></button>
+            <button className="btn grey3" onClick={() => postDelete.mutate(post)}><BsFillTrash3Fill/></button>
         </div>
       </div>
     </li>
