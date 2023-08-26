@@ -6,9 +6,11 @@ export const PostContext = createContext({});
 
 export const PostProvider = ({ children }) => {
 
-    const [isOpen, setIsOpen ] = useState(false);
+    const [isOpenAdd, setisOpenAdd ] = useState(false);
     const [editingPost, setEditingPost] = useState(null);
     const token = localStorage.getItem("@TOKEN");
+
+    console.log(editingPost);
 
 
     const { data: postList} = useQuery({ queryKey: ["posts"], queryFn: async () =>{
@@ -24,7 +26,7 @@ export const PostProvider = ({ children }) => {
 
     const revalidate = () => {
         client.invalidateQueries({ queryKey: ["posts"]});
-        setIsOpen(false)
+        setisOpenAdd(false)
     }
 
    const postCreate = useMutation({
@@ -40,7 +42,7 @@ export const PostProvider = ({ children }) => {
 
 
     return(
-        <PostContext.Provider value={{postList, isOpen, setIsOpen, editingPost, setEditingPost, postCreate}}>
+        <PostContext.Provider value={{postList, isOpenAdd, setisOpenAdd, editingPost, setEditingPost, postCreate}}>
             {children}
         </PostContext.Provider>
     )

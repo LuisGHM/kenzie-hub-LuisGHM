@@ -11,6 +11,17 @@
     gap: 17px;
 }
 
+.formContainer{
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.buttonSubmit{
+    margin-bottom: 11px;
+}
+
 @media (min-width:650px) {
     .form{
         padding: 42px 22px;
