@@ -35,7 +35,10 @@ export const PostProvider = ({ children }) => {
             },
         }); 
     },
-    onSuccess: revalidate,
+    onSuccess: () => {
+        revalidate();
+        toast.success("Post criado com sucesso")   
+    },
    });
 
    const postUpdate = useMutation({
@@ -49,6 +52,7 @@ export const PostProvider = ({ children }) => {
         onSuccess:() =>{
             setEditingPost(null);
             revalidate();
+            toast.success("Post alterado com sucesso")
         }
    });
 
