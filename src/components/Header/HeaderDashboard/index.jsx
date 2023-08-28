@@ -6,10 +6,6 @@ import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
 
 export const HeaderDashboard = () => {
-  const notification = () => {
-    toast.success("Usuário desconectado com sucesso.");
-  };
-
   const { logout } = useContext(UserContext);
 
   return (

@@ -2,12 +2,10 @@ import React, { useContext } from "react";
 import { PostContext } from "../../providers/PostContext";
 import { PostCard } from "./PostCard";
 import styles from "./style.module.scss";
-import { FiPlus } from "react-icons/fi"
+import { FiPlus } from "react-icons/fi";
 
 export const PostList = () => {
    const { postList, setisOpenAdd } = useContext(PostContext);
-
-   
 
    return (
       <div className="container">
@@ -16,9 +14,9 @@ export const PostList = () => {
             <button onClick={() => setisOpenAdd(true)} className={`${styles.buttonPlus} btn grey2`}><FiPlus/></button>
          </div>
          <ul className={`${styles.listContainer}`}>
-            {postList?.map((item) => (
-               <PostCard key={item.id} post={item} />
-            ))}
+            {postList.length !== 0 ? postList.map((item) => (
+            <PostCard key={item.id} post={item} />
+            )) : <h3>Você ainda não tem nenhuma tecnologia cadastrada</h3>}
          </ul>
       </div>
    );

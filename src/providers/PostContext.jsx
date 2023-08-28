@@ -58,7 +58,7 @@ export const PostProvider = ({ children }) => {
 
    const postDelete = useMutation({
         mutationFn: async (formData) => {
-            console.log(formData.id);
+
               return await api.delete(`/users/techs/${formData.id}`, {
                 headers:{
                     Authorization: `Bearer ${token}`,

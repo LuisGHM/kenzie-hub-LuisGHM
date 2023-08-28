@@ -1,7 +1,7 @@
-import { useForm } from "react-hook-form"
-import { Input } from "../input"
-import { useContext } from "react"
-import { PostContext } from "../../../providers/PostContext"
+import { useForm } from "react-hook-form";
+import { Input } from "../input";
+import { useContext } from "react";
+import { PostContext } from "../../../providers/PostContext";
 
 export const EditTechForm = () =>{
 
@@ -12,7 +12,7 @@ export const EditTechForm = () =>{
             title: editingPost.title,
             status: editingPost.status,
         }
-    })
+    });
 
     const submit = (formData) => {
         postUpdate.mutate(formData);
