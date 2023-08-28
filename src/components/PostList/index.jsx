@@ -14,9 +14,11 @@ export const PostList = () => {
             <button onClick={() => setisOpenAdd(true)} className={`${styles.buttonPlus} btn grey2`}><FiPlus/></button>
          </div>
          <ul className={`${styles.listContainer}`}>
-            {postList.length !== 0 ? postList.map((item) => (
-            <PostCard key={item.id} post={item} />
-            )) : <h3>Você ainda não tem nenhuma tecnologia cadastrada</h3>}
+            {postList !== undefined && postList.length !== 0 ? (
+               postList.map((item) => <PostCard key={item.id} post={item} />)
+            ) : (
+               <h3>Você ainda não tem nenhuma tecnologia cadastrada</h3>
+            )}
          </ul>
       </div>
    );
